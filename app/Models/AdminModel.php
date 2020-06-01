@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class AdminModel extends Model
 {
     protected $table      = 'testimonial';
-    // protected $primaryKey = 'id_testimonial';
+    protected $primaryKey = 'id_testimonial';
 
     // protected $returnType = 'array';
     // protected $useSoftDeletes = true;

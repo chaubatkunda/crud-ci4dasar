@@ -401,57 +401,25 @@
                     <div class="testimonials-inner section-inner">
                         <h2 class="section-title mt-0 text-center">Testimonials</h2>
                         <div class="testimonials-wrap">
-                            <div class="testimonial text-xs is-revealing">
-                                <div class="testimonial-inner">
-                                    <div class="testimonial-main">
-                                        <div class="testimonial-header">
-                                            <img class="mb-16" src="<?php echo base_url(); ?>/assets-page/dist/images/testimonial-01.png" alt="Testimonial">
+                            <?php foreach ($testimonial as $t) : ?>
+                                <div class="testimonial text-xs is-revealing">
+                                    <div class="testimonial-inner">
+                                        <div class="testimonial-main">
+                                            <div class="testimonial-header">
+                                                <img class="mb-16" src="<?php echo base_url("upload/" . $t->image); ?>" alt="Testimonial">
+                                            </div>
+                                            <div class="testimonial-body">
+                                                <p class="mb-0"><?php echo $t->deskripsi; ?></p>
+                                            </div>
                                         </div>
-                                        <div class="testimonial-body">
-                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-footer">
-                                        <div class="testimonial-link">
-                                            <a href="#">@martajones</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial text-xs is-revealing">
-                                <div class="testimonial-inner">
-                                    <div class="testimonial-main">
-                                        <div class="testimonial-header">
-                                            <img class="mb-16" src="<?php echo base_url(); ?>/assets-page/dist/images/testimonial-02.png" alt="Testimonial">
-                                        </div>
-                                        <div class="testimonial-body">
-                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-footer">
-                                        <div class="testimonial-link">
-                                            <a href="#">@michealpahm</a>
+                                        <div class="testimonial-footer">
+                                            <div class="testimonial-link">
+                                                <a href="#"><?php echo $t->nama; ?></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="testimonial text-xs is-revealing">
-                                <div class="testimonial-inner">
-                                    <div class="testimonial-main">
-                                        <div class="testimonial-header">
-                                            <img class="mb-16" src="<?php echo base_url(); ?>/assets-page/dist/images/testimonial-03.png" alt="Testimonial">
-                                        </div>
-                                        <div class="testimonial-body">
-                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-footer">
-                                        <div class="testimonial-link">
-                                            <a href="#">@markbrown</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
