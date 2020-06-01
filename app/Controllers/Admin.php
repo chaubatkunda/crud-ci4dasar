@@ -13,4 +13,16 @@ class Admin extends BaseController
         ];
         return view('_layout/wraper', $data);
     }
+    public function create()
+    {
+        echo "Berhasil";
+    }
+    public function home()
+    {
+        $data = [
+            'title'     => 'Home',
+            'conten'    => 'admin/home/index'
+        ];
+        return view('_layout/wraper', $data);
+    }
 }

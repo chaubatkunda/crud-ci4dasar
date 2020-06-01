@@ -32,6 +32,13 @@
 <script src="<?php echo base_url(); ?>/assets/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url(); ?>/assets/dist/js/demo.js"></script>
+<script src="<?php echo base_url(); ?>/assets/plugins/datatables/jquery.dataTables.js"></script>
+<script src="<?php echo base_url(); ?>/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<script>
+    $(function() {
+        $("#example1").DataTable();
+    });
+</script>
 </body>
 
 </html>
