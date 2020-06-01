@@ -29,29 +29,26 @@
                             </h3>
                         </div>
                         <!-- /.card-header -->
-                        <form action="" method="post">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="nama">Nama</label>
-                                    <input type="text" class="form-control" id="nama" placeholder="Enter Nama">
-                                </div>
-                                <div class="form-group">
-                                    <label for="deskripsi">Deskripsi</label>
-                                    <textarea name="deskripsi" id="deskripsi" rows="5" class="form-control"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputFile">File input</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" name="image" class="form-control" id="exampleInputFile">
-                                        </div>
-                                    </div>
-                                </div>
+                        <?php echo form_open_multipart('admin/testimonial/store'); ?>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="nama">Nama</label>
+                                <input type="text" name="nama" class="form-control" id="nama" placeholder="Enter Nama">
                             </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Simpan</button>
+                            <div class="form-group">
+                                <label for="deskripsi">Deskripsi</label>
+                                <textarea name="deskripsi" id="deskripsi" rows="5" class="form-control"></textarea>
                             </div>
-                        </form>
+                            <div class="form-group">
+                                <label>File input</label>
+                                <input type="file" name="image" class="form-control">
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <a href="<?php echo base_url('admin/testimonial'); ?>" class="btn btn-danger">Batal</a>
+                        </div>
+                        <?php echo form_close(); ?>
                     </div>
                 </div>
             </div>

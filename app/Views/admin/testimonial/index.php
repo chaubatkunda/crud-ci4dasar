@@ -39,15 +39,23 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet
-                                        Explorer 4.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td> 4</td>
-                                    <td>X</td>
-                                </tr>
+                                <?php $no = 0;
+                                foreach ($testimonial as $t) :
+                                ?>
+                                    <tr>
+                                        <td><?php echo ++$no; ?></td>
+                                        <td>
+                                            <img src="<?php echo base_url("upload/" . $t->image); ?>" class="rounded-circle" width="50" height="50">
+
+                                        </td>
+                                        <td><?php echo $t->nama; ?></td>
+                                        <td><?php echo $t->deskripsi; ?></td>
+                                        <td>
+                                            <a href="" class="btn btn-primary btn-sm">Edit</a>
+                                            <a href="" class="btn btn-danger btn-sm">Hapus</a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
                             <tfoot>
                                 <tr>
