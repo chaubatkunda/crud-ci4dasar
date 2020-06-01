@@ -5,7 +5,16 @@ namespace App\Controllers;
 
 class Admin extends BaseController
 {
-    public function index()
+    public function home()
+    {
+        $data = [
+            'title'     => 'Home',
+            'conten'    => 'admin/home/index'
+        ];
+        return view('_layout/wraper', $data);
+    }
+
+    public function testimonial()
     {
         $data = [
             'title'     => 'Testimonial',
@@ -15,13 +24,9 @@ class Admin extends BaseController
     }
     public function create()
     {
-        echo "Berhasil";
-    }
-    public function home()
-    {
         $data = [
-            'title'     => 'Home',
-            'conten'    => 'admin/home/index'
+            'title'     => ' Create',
+            'conten'    => 'admin/testimonial/create'
         ];
         return view('_layout/wraper', $data);
     }
