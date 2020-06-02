@@ -30,4 +30,12 @@ class AdminModel extends Model
     {
         return $this->table($this->table)->get()->getResult();
     }
+    public function getTestimonialById($id)
+    {
+        return $this->table($this->table)->getWhere([$this->primaryKey => $id])->getRow();
+    }
+    public function updateTestimonial($id, $data)
+    {
+        return $this->db->table($this->table)->update($data, [$this->primaryKey => $id]);
+    }
 }

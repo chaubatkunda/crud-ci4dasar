@@ -51,7 +51,7 @@
                                         <td><?php echo $t->nama; ?></td>
                                         <td><?php echo $t->deskripsi; ?></td>
                                         <td>
-                                            <a href="" class="btn btn-primary btn-sm">Edit</a>
+                                            <a href="<?php echo base_url('/admin/testimonial/edit/' . $t->id_testimonial); ?>" class="btn btn-primary btn-sm">Edit</a>
                                             <a href="" class="btn btn-danger btn-sm">Hapus</a>
                                         </td>
                                     </tr>

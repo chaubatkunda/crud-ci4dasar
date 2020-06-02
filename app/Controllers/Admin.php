@@ -38,6 +38,16 @@ class Admin extends BaseController
         ];
         return view('_layout/wraper', $data);
     }
+    public function edit($id)
+    {
+        $data = [
+            'title'     => ' Edit',
+            'testimoni' => $this->testimonial->getTestimonialById($id),
+            'conten'    => 'admin/testimonial/edit'
+        ];
+        return view('_layout/wraper', $data);
+    }
+
     public function store()
     {
         $image = $this->request->getFile('image');
@@ -49,6 +59,30 @@ class Admin extends BaseController
         ];
         $image->move(ROOTPATH . 'public/upload', $name);
         $save = $this->testimonial->insertTestimonial($data);
-        return redirect()->to('admin/testimonial');
+        return redirect()->to(base_url('admin/testimonial'));
+    }
+    public function update($id)
+    {
+        $gambar = $this->testimonial->getTestimonialById($id)->image;
+        $folder = FCPATH . "upload/";
+        $isifolder = $folder . $gambar;
+        $image = $this->request->getFile('image');
+        $name = $image->getName();
+        if (is_null($name)) {
+            $data = [
+                'nama'      => $this->request->getPost('nama'),
+                'deskripsi' => $this->request->getPost('deskripsi')
+            ];
+        } else {
+            @unlink($isifolder);
+            $data = [
+                'nama'      => $this->request->getPost('nama'),
+                'deskripsi' => $this->request->getPost('deskripsi'),
+                'image'      => $name
+            ];
+            $image->move(ROOTPATH . 'public/upload', $name);
+        }
+        $this->testimonial->updateTestimonial($id, $data);
+        return redirect()->to(base_url('admin/testimonial'));
     }
 }

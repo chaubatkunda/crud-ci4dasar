@@ -36,6 +36,8 @@ $routes->get('/admin/home', 'Admin::home');
 $routes->get('/admin/testimonial', 'Admin::testimonial');
 $routes->get('/admin/testimonial/create', 'Admin::create');
 $routes->post('/admin/testimonial/store', 'Admin::store');
+$routes->get('/admin/testimonial/edit/(:num)', 'Admin::edit/$1');
+$routes->post('/admin/testimonial/update/(:num)', 'Admin::update/$1');
 
 /**
  * --------------------------------------------------------------------
